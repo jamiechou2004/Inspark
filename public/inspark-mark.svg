@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">InSpark mark</title>
+  <desc id="desc">Orange lightbulb icon.</desc>
+  <rect width="512" height="512" rx="96" fill="#F8F5ED"/>
+  <g fill="#FF6A00">
+    <rect x="246" y="48" width="22" height="102" rx="11"/>
+    <rect x="62" y="246" width="102" height="22" rx="11"/>
+    <rect x="151.2" y="109.2" width="22" height="94" rx="11" transform="rotate(-45 151.2 109.2)"/>
+    <rect x="348" y="176" width="22" height="94" rx="11" transform="rotate(-135 348 176)"/>
+    <rect x="165.2" y="336.8" width="22" height="94" rx="11" transform="rotate(45 165.2 336.8)"/>
+    <path d="M257 182C217.2 182 192 212.7 192 250.6C192 275.6 204.9 295.4 217.4 311.1C224.8 320.4 228.6 331.8 228.6 343.6C228.6 347 231.4 349.8 234.8 349.8H279.2C282.6 349.8 285.4 347 285.4 343.6C285.4 331.7 289.1 320.2 296.6 310.8C309.1 295.1 322 275.5 322 250.6C322 212.7 296.8 182 257 182Z"/>
+    <rect x="230" y="362" width="54" height="22" rx="8"/>
+    <path d="M234 390H280C280 405 270.3 415 257 415C243.7 415 234 405 234 390Z"/>
+  </g>
+</svg>

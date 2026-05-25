@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Flame, Lightbulb, Map, Sparkles, UserRound } from "lucide-react";
+import { Compass, Lightbulb, Map, Sparkles, UserRound } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Compass },
@@ -19,13 +19,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="app-shell">
       <aside className="sidebar">
         <Link className="brand" href="/">
-          <span className="brand-mark">
-            <Flame size={21} strokeWidth={2.5} />
-          </span>
-          <span>
-            <p className="brand-title">Inspark</p>
-            <p className="brand-subtitle">Self-discovery for students</p>
-          </span>
+          <img className="brand-logo" src="/inspark-logo.svg" alt="InSpark" />
+          <span className="brand-subtitle">Self-discovery for students</span>
         </Link>
 
         <nav className="nav-list" aria-label="Primary navigation">

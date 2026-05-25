@@ -1,0 +1,16 @@
+<svg width="1170" height="450" viewBox="0 0 1170 450" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">InSpark logo</title>
+  <desc id="desc">Orange lightbulb icon with InSpark wordmark.</desc>
+  <rect width="1170" height="450" fill="#F8F5ED"/>
+  <g fill="#FF6A00">
+    <rect x="226" y="75" width="20" height="95" rx="10"/>
+    <rect x="60" y="247" width="96" height="20" rx="10"/>
+    <rect x="143.94" y="132.23" width="20" height="88" rx="10" transform="rotate(-45 143.94 132.23)"/>
+    <rect x="313.94" y="194.46" width="20" height="88" rx="10" transform="rotate(-135 313.94 194.46)"/>
+    <rect x="157.94" y="313.54" width="20" height="88" rx="10" transform="rotate(45 157.94 313.54)"/>
+    <path d="M235 199C199.1 199 177 226.3 177 260.2C177 282.6 188.5 300.3 199.7 314.3C206.4 322.7 209.8 332.8 209.8 343.4C209.8 346.5 212.3 349 215.4 349H254.7C257.8 349 260.3 346.5 260.3 343.4C260.3 332.7 263.6 322.4 270.4 314C281.6 300 293 282.5 293 260.2C293 226.3 270.9 199 235 199Z"/>
+    <rect x="211" y="360" width="48" height="19" rx="7"/>
+    <path d="M215 384H255C255 397.3 246.5 406 235 406C223.5 406 215 397.3 215 384Z"/>
+  </g>
+  <text x="386" y="359" fill="#101820" font-family="Arial, Helvetica, sans-serif" font-size="204" font-weight="800" letter-spacing="-4">InSpark</text>
+</svg>
