@@ -1,16 +1,26 @@
-<svg width="1170" height="450" viewBox="0 0 1170 450" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1920" height="680" viewBox="0 0 1920 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">InSpark logo</title>
-  <desc id="desc">Orange lightbulb icon with InSpark wordmark.</desc>
-  <rect width="1170" height="450" fill="#F8F5ED"/>
-  <g fill="#FF6A00">
-    <rect x="226" y="75" width="20" height="95" rx="10"/>
-    <rect x="60" y="247" width="96" height="20" rx="10"/>
-    <rect x="143.94" y="132.23" width="20" height="88" rx="10" transform="rotate(-45 143.94 132.23)"/>
-    <rect x="313.94" y="194.46" width="20" height="88" rx="10" transform="rotate(-135 313.94 194.46)"/>
-    <rect x="157.94" y="313.54" width="20" height="88" rx="10" transform="rotate(45 157.94 313.54)"/>
-    <path d="M235 199C199.1 199 177 226.3 177 260.2C177 282.6 188.5 300.3 199.7 314.3C206.4 322.7 209.8 332.8 209.8 343.4C209.8 346.5 212.3 349 215.4 349H254.7C257.8 349 260.3 346.5 260.3 343.4C260.3 332.7 263.6 322.4 270.4 314C281.6 300 293 282.5 293 260.2C293 226.3 270.9 199 235 199Z"/>
-    <rect x="211" y="360" width="48" height="19" rx="7"/>
-    <path d="M215 384H255C255 397.3 246.5 406 235 406C223.5 406 215 397.3 215 384Z"/>
+  <desc id="desc">Orange lightbulb icon with bold InSpark wordmark.</desc>
+  <defs>
+    <linearGradient id="sparkGradient" x1="84" y1="78" x2="510" y2="542" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A00"/>
+      <stop offset="0.52" stop-color="#FF6A00"/>
+      <stop offset="1" stop-color="#F25700"/>
+    </linearGradient>
+    <linearGradient id="inkGradient" x1="626" y1="108" x2="1816" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111820"/>
+      <stop offset="1" stop-color="#071014"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#sparkGradient)">
+    <rect x="368" y="92" width="32" height="152" rx="16"/>
+    <rect x="72" y="304" width="158" height="32" rx="16"/>
+    <rect x="178.1" y="177.4" width="32" height="142" rx="16" transform="rotate(-45 178.1 177.4)"/>
+    <rect x="502.3" y="279.8" width="32" height="142" rx="16" transform="rotate(-135 502.3 279.8)"/>
+    <rect x="228.3" y="433.7" width="32" height="142" rx="16" transform="rotate(45 228.3 433.7)"/>
+    <path d="M384 282C319.9 282 278 331.3 278 391.5C278 431.8 298 461.7 317.6 486.6C329.5 501.7 335.4 519.9 335.4 539.1C335.4 545.2 340.2 550 346.3 550H421.8C427.9 550 432.7 545.2 432.7 539.1C432.7 519.8 438.6 501.4 450.5 486.3C470.1 461.4 490 431.8 490 391.5C490 331.3 448.1 282 384 282Z"/>
+    <rect x="339" y="574" width="90" height="32" rx="12"/>
+    <path d="M350 615H418C414.5 638.9 401.3 652 384 652C366.7 652 353.5 638.9 350 615Z"/>
   </g>
-  <text x="386" y="359" fill="#101820" font-family="Arial, Helvetica, sans-serif" font-size="204" font-weight="800" letter-spacing="-4">InSpark</text>
+  <text x="620" y="462" fill="url(#inkGradient)" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="260" font-weight="900" letter-spacing="-8">InSpark</text>
 </svg>
