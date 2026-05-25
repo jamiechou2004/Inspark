@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Lightbulb, Map, Sparkles, UserRound } from "lucide-react";
+import { Compass, GitCompare, Lightbulb, Map, TrendingUp, UserRound } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Compass },
-  { href: "/onboarding", label: "Onboarding", icon: Sparkles },
-  { href: "/reflection", label: "Reflect", icon: Lightbulb },
-  { href: "/profile", label: "Profile", icon: UserRound },
-  { href: "/plan", label: "Plan", icon: Map }
+  { href: "/reflection", label: "Reflection", icon: Lightbulb },
+  { href: "/focus", label: "Direction Focus", icon: GitCompare },
+  { href: "/plan", label: "Validation Plan", icon: Map },
+  { href: "/progress", label: "Progress", icon: TrendingUp },
+  { href: "/profile", label: "Profile", icon: UserRound }
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -26,7 +27,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <nav className="nav-list" aria-label="Primary navigation">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const active = pathname === item.href;
+            const active = pathname === item.href || (item.href === "/reflection" && pathname === "/onboarding");
             return (
               <Link
                 key={item.href}

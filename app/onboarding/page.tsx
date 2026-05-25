@@ -1,62 +1,60 @@
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
-import { ProgressSteps } from "../../components/ProgressSteps";
-import { onboardingSteps, reflectionQuestions } from "../../data/mockQuestions";
+import { MotionReveal } from "../../components/MotionReveal";
+import { onboardingFields } from "../../data/journey";
 
 export default function OnboardingPage() {
   return (
     <AppShell>
-      <div className="topbar">
-        <div>
-          <p className="eyebrow">Student onboarding</p>
-          <h1 className="page-title">Start with context, not a checklist.</h1>
+      <div className="page-intro compact">
+        <MotionReveal>
+          <p className="eyebrow">Calm onboarding</p>
+          <h1 className="page-title">Start with what feels unclear.</h1>
           <p className="page-copy">
-            Inspark begins with the student&apos;s interests, constraints, energy, and early
-            signals. The goal is a better first question, not a premature answer.
+            No pressure to define a future. Inspark first learns where uncertainty is coming from,
+            what has already been tried, and what kind of support would help now.
           </p>
-        </div>
+        </MotionReveal>
         <Link className="button" href="/reflection">
-          Reflect <ArrowRight size={18} />
+          Continue to reflection <ArrowRight size={18} />
         </Link>
       </div>
 
-      <div className="grid two">
-        <ProgressSteps steps={onboardingSteps} currentStep={1} />
-
-        <section className="card card-padding">
-          <div className="card-heading">
-            <span className="icon-chip">
-              <GraduationCap size={18} />
-            </span>
-            <div>
-              <p className="eyebrow">Maya, 11th grade</p>
-              <h2>Early signals</h2>
-            </div>
+      <section className="onboarding-shell">
+        <MotionReveal className="progress-panel card">
+          <div className="progress-ring">1/4</div>
+          <div>
+            <p className="eyebrow">Current focus</p>
+            <h2>Make uncertainty visible</h2>
+            <p>
+              These choices are not permanent. They simply help the AI Reflection Guide ask better
+              questions and avoid generic advice.
+            </p>
           </div>
-          <div className="pill-row">
-            <span className="pill orange">Climate</span>
-            <span className="pill blue">Design</span>
-            <span className="pill purple">Behavior</span>
-            <span className="pill green">Public impact</span>
-          </div>
-        </section>
-      </div>
+        </MotionReveal>
 
-      <section className="section grid two">
-        {reflectionQuestions.map((question, index) => (
-          <article className="card card-padding" key={question.id}>
-            <div className="card-heading">
-              <span className="icon-chip purple">
-                <Sparkles size={18} />
-              </span>
-              <div>
-                <p className="eyebrow">Prompt {index + 1}</p>
-                <h2>{question.prompt}</h2>
+        <div className="onboarding-fields">
+          {onboardingFields.map((field, index) => (
+            <MotionReveal className="question-card card" delay={index * 0.06} key={field.label}>
+              <div className="question-top">
+                <span>{index + 1}</span>
+                <div>
+                  <h2>{field.label}</h2>
+                  <p>{field.helper}</p>
+                </div>
               </div>
-            </div>
-          </article>
-        ))}
+              <div className="chip-grid">
+                {field.options.map((option, optionIndex) => (
+                  <button className={`choice-chip${optionIndex === 0 ? " selected" : ""}`} type="button" key={option}>
+                    {optionIndex === 0 ? <Check size={15} /> : <Sparkles size={14} />}
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </MotionReveal>
+          ))}
+        </div>
       </section>
     </AppShell>
   );

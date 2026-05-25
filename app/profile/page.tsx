@@ -22,8 +22,8 @@ export default function ProfilePage() {
             concrete without feeling fixed.
           </p>
         </div>
-        <Link className="button" href="/plan">
-          Build plan <ArrowRight size={18} />
+        <Link className="button" href="/focus">
+          Compare directions <ArrowRight size={18} />
         </Link>
       </div>
 
@@ -49,8 +49,8 @@ export default function ProfilePage() {
       </div>
 
       <section className="section">
-        <p className="eyebrow">Recommended opportunities</p>
-        <h2>Next places to test the profile</h2>
+        <p className="eyebrow">Exploration signals</p>
+        <h2>Places to collect evidence without overcommitting</h2>
         <div className="grid three">
           {mockOpportunities.map((opportunity) => (
             <OpportunityCard key={opportunity.title} opportunity={opportunity} />

@@ -1,55 +1,89 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { ActionPlanCard } from "../../components/ActionPlanCard";
+import { ArrowRight, BookOpen, CalendarDays, MessageCircle, PenLine, Users } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
-import { ProgressSteps } from "../../components/ProgressSteps";
-import { onboardingSteps } from "../../data/mockQuestions";
-import { mockProfile } from "../../data/mockProfile";
-import { generatePlan } from "../../lib/generatePlan";
+import { MotionReveal } from "../../components/MotionReveal";
+import { plan30Day, plan7Day, taskTypes } from "../../data/journey";
 
-const plan = generatePlan(mockProfile);
+const taskIcons = {
+  learn: BookOpen,
+  talk: Users,
+  build: PenLine,
+  reflect: MessageCircle
+};
 
 export default function PlanPage() {
   return (
     <AppShell>
-      <div className="topbar">
-        <div>
-          <p className="eyebrow">Action plan</p>
-          <h1 className="page-title">Make exploration small enough to start.</h1>
+      <div className="page-intro compact">
+        <MotionReveal>
+          <p className="eyebrow">Validation Plan</p>
+          <h1 className="page-title">Turn a direction into concrete action.</h1>
           <p className="page-copy">
-            The plan turns insight into lightweight experiments, proof points, and outreach that a
-            student can complete alongside school.
+            The plan lowers the cost of starting. It gives students a short sequence of learn,
+            talk, build, and reflect tasks before they decide whether to continue.
           </p>
-        </div>
-        <Link className="button secondary" href="/">
-          Back home <ArrowRight size={18} />
+        </MotionReveal>
+        <Link className="button" href="/progress">
+          Check progress <ArrowRight size={18} />
         </Link>
       </div>
 
-      <div className="grid two">
-        <ProgressSteps steps={onboardingSteps} currentStep={4} />
-        <section className="card card-padding">
+      <section className="plan-layout">
+        <MotionReveal className="card plan-card-large">
           <div className="card-heading">
-            <span className="icon-chip green">
-              <CheckCircle2 size={18} />
+            <span className="icon-chip">
+              <CalendarDays size={18} />
             </span>
             <div>
-              <p className="eyebrow">Plan focus</p>
-              <h2>{mockProfile.fitAreas[0]}</h2>
+              <p className="eyebrow">7-day exploration plan</p>
+              <h2>UX Research validation sprint</h2>
             </div>
           </div>
-          <p className="profile-summary">
-            The first cycle is designed to test fit quickly, produce a shareable artifact, and open
-            one human conversation.
-          </p>
-        </section>
-      </div>
+          <div className="timeline-list">
+            {plan7Day.map((item, index) => (
+              <div className="timeline-item" key={item.day}>
+                <span>{item.day}</span>
+                <div>
+                  <strong>{item.type}</strong>
+                  <p>{item.task}</p>
+                </div>
+                <i style={{ height: `${Math.max(28, 74 - index * 5)}%` }} />
+              </div>
+            ))}
+          </div>
+        </MotionReveal>
 
-      <section className="section grid three">
-        {plan.map((item) => (
-          <ActionPlanCard key={item.week} item={item} />
-        ))}
+        <div className="plan-side">
+          <MotionReveal className="card plan-card" delay={0.08}>
+            <p className="eyebrow">30-day direction testing plan</p>
+            <h2>Build evidence slowly enough to notice fit.</h2>
+            <ul className="clean-list">
+              {plan30Day.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </MotionReveal>
+
+          <MotionReveal className="task-grid" delay={0.14}>
+            {taskTypes.map((task) => {
+              const Icon = taskIcons[task.type as keyof typeof taskIcons];
+              return (
+                <article className="task-card card" key={task.label}>
+                  <Icon size={18} />
+                  <h3>{task.label}</h3>
+                  <p>{task.text}</p>
+                </article>
+              );
+            })}
+          </MotionReveal>
+        </div>
       </section>
+
+      <MotionReveal className="checkpoint-banner card">
+        <p className="eyebrow">Checkpoint question</p>
+        <h2>After seven days, does this direction feel more clear, less clear, or unchanged?</h2>
+        <p>The answer is useful either way. The goal is better evidence, not instant certainty.</p>
+      </MotionReveal>
     </AppShell>
   );
 }

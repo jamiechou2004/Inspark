@@ -1,42 +1,50 @@
 import { Send, Sparkles } from "lucide-react";
-import { reflectionQuestions } from "../data/mockQuestions";
+import { suggestedAnswers } from "../data/journey";
 
 export function ReflectionChat() {
   return (
     <section className="reflection-chat card">
       <div className="chat-header">
         <div>
-          <p className="eyebrow">AI reflection</p>
-          <h2>Turn scattered interests into useful patterns.</h2>
+          <p className="eyebrow">AI Reflection Guide</p>
+          <h2>Let&apos;s understand the uncertainty before choosing a path.</h2>
         </div>
-        <span className="brand-mark small">
-          <Sparkles size={17} />
+        <span className="ai-glow-mark">
+          <Sparkles size={18} />
         </span>
       </div>
 
       <div className="message-stack">
-        <div className="message ai">
-          <strong>Inspark</strong>
-          <p>{reflectionQuestions[0].prompt}</p>
+        <div className="reflection-prompt-card">
+          <span>Current moment: 产生兴趣</span>
+          <strong>What sparked your interest in this direction?</strong>
+          <p>Try naming the moment, person, class, project, or problem that made this feel worth exploring.</p>
         </div>
         <div className="message student">
           <p>
-            I keep coming back to climate, design, and the way people make decisions. I like
-            building things that make complicated ideas feel clear.
+            I keep noticing that I enjoy understanding why people make decisions. I also like making
+            messy ideas feel clear for other students.
           </p>
         </div>
         <div className="message ai">
           <strong>Inspark</strong>
           <p>
-            That points toward systems thinking with a communication edge. Let&apos;s test where
-            you prefer to spend energy: research, prototyping, storytelling, or organizing people.
+            That suggests a useful test: compare whether you enjoy learning from people directly,
+            shaping product decisions, or designing clearer learning experiences.
           </p>
+        </div>
+        <div className="suggestion-row">
+          {suggestedAnswers.map((answer) => (
+            <button type="button" className="suggestion-chip" key={answer}>
+              {answer}
+            </button>
+          ))}
         </div>
       </div>
 
       <form className="chat-input">
         <input aria-label="Reflection answer" placeholder="Write a quick reflection..." />
-        <button className="button" type="button" aria-label="Send reflection">
+        <button className="send-button" type="button" aria-label="Send reflection">
           <Send size={17} />
         </button>
       </form>
