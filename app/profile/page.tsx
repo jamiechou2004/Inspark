@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
+import { BilingualText } from "../../components/BilingualText";
 import { InterestProfileCard } from "../../components/InterestProfileCard";
 import { OpportunityCard } from "../../components/OpportunityCard";
 import { mockOpportunities } from "../../data/mockOpportunities";
@@ -15,15 +16,21 @@ export default function ProfilePage() {
     <AppShell>
       <div className="topbar">
         <div>
-          <p className="eyebrow">Interest profile</p>
-          <h1 className="page-title">A student profile with useful edges.</h1>
+          <p className="eyebrow">
+            <BilingualText en="Interest profile" zh="兴趣画像" />
+          </p>
+          <h1 className="page-title">
+            <BilingualText en="A student profile with useful edges." zh="一个保留边界感的学生探索画像。" />
+          </h1>
           <p className="page-copy">
-            Inspark summarizes strengths, fit areas, and growth edges so exploration becomes
-            concrete without feeling fixed.
+            <BilingualText
+              en="Inspark summarizes strengths, fit areas, and growth edges so exploration becomes concrete without feeling fixed."
+              zh="Inspark 会总结优势、可能匹配领域和成长边界，让探索更具体，但不把学生固定在某个标签里。"
+            />
           </p>
         </div>
         <Link className="button" href="/focus">
-          Compare directions <ArrowRight size={18} />
+          <BilingualText en="Compare directions" zh="比较方向" /> <ArrowRight size={18} />
         </Link>
       </div>
 
@@ -35,8 +42,12 @@ export default function ProfilePage() {
               <Sparkles size={18} />
             </span>
             <div>
-              <p className="eyebrow">AI synthesis</p>
-              <h2>Why this profile fits</h2>
+              <p className="eyebrow">
+                <BilingualText en="AI synthesis" zh="AI 综合分析" />
+              </p>
+              <h2>
+                <BilingualText en="Why this profile fits" zh="为什么这个画像成立" />
+              </h2>
             </div>
           </div>
           {profile.signals.map((signal) => (
@@ -49,8 +60,12 @@ export default function ProfilePage() {
       </div>
 
       <section className="section">
-        <p className="eyebrow">Exploration signals</p>
-        <h2>Places to collect evidence without overcommitting</h2>
+        <p className="eyebrow">
+          <BilingualText en="Exploration signals" zh="探索信号" />
+        </p>
+        <h2>
+          <BilingualText en="Places to collect evidence without overcommitting" zh="在不过度承诺的前提下收集证据" />
+        </h2>
         <div className="grid three">
           {mockOpportunities.map((opportunity) => (
             <OpportunityCard key={opportunity.title} opportunity={opportunity} />
