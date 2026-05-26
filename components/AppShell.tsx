@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, GitCompare, Lightbulb, Map, TrendingUp, UserRound } from "lucide-react";
+import { ChevronRight, Compass, GitCompare, HelpCircle, Lightbulb, Map, TrendingUp, UserRound } from "lucide-react";
 import { BilingualText } from "./BilingualText";
 import { LanguageToggle } from "./LanguageToggle";
 
@@ -48,6 +48,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             );
           })}
         </nav>
+
+        <div className="sidebar-footer">
+          <div className="sidebar-user-card" aria-label="Current user">
+            <span className="sidebar-avatar">AY</span>
+            <span className="sidebar-user-copy">
+              <strong>Avery Kim</strong>
+              <small>
+                <BilingualText en="Student" zh="学生" />
+              </small>
+            </span>
+            <ChevronRight size={17} />
+          </div>
+          <button className="sidebar-help-button" type="button">
+            <HelpCircle size={17} />
+            <span>
+              <BilingualText en="Get help" zh="获取帮助" />
+            </span>
+          </button>
+        </div>
       </aside>
       <main className="shell-main">{children}</main>
     </div>
